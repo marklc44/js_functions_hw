@@ -15,14 +15,14 @@ var stripSpecialChars = function(str) {
 };
 
 // Strip special chars 2
-// this is a funky looking condition, but it works
-// without having to save all special chars in an array or string
+// use charcodes for lowercase alpha chars so you don't 
+// have to save all special chars in an array or string
 
 var stripSpecialChars2 = function(str) {
 	var stripped = '';
 
 	for (var i = 0; i < str.length; i++) {
-		if ((str[i].charCodeAt(0) < 90 && str[i].charCodeAt(0) > 65) || (str[i].charCodeAt(0) < 122 && str[i].charCodeAt(0) > 96) || (str[i].charCodeAt(0) > 64 && str[i].charCodeAt(0) < 90)) {
+		if (str[i].charCodeAt(0) > 96 && str[i].charCodeAt(0) < 122) {
 			stripped += str[i];
 		}
 	}
@@ -35,7 +35,7 @@ console.log(stripSpecialChars2('app[le'));
 // Count letters
 
 var letterCount = function(str) {
-	var str = stripSpecialChars(str.toLowerCase());
+	var str = stripSpecialChars2(str.toLowerCase());
 	var count = {};
 
 	for (var i = 0; i < str.length; i++) {
