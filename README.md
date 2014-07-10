@@ -23,10 +23,10 @@ Write a function that takes an array of numbers, and returns the sum of each num
 
 `count += (number * index)`
 
-##numSquare(max)
+##numSquare(max) - try without Math.sqrt
 Create a function called `numSquare` that will return an array of all perfect square numbers up to, but not exceeding a max number.
 
-##isPrime(num)
+##isPrime(num) - interview problem
 Create a function to return `true` or `false` if a number passed in a prime number.
 
 ##primes(max)
