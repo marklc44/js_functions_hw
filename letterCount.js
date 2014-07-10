@@ -14,6 +14,24 @@ var stripSpecialChars = function(str) {
 	return stripped;
 };
 
+// Strip special chars 2
+// this is a funky looking condition, but it works
+// without having to save all special chars in an array or string
+
+var stripSpecialChars2 = function(str) {
+	var stripped = '';
+
+	for (var i = 0; i < str.length; i++) {
+		if ((str[i].charCodeAt(0) < 90 && str[i].charCodeAt(0) > 65) || (str[i].charCodeAt(0) < 122 && str[i].charCodeAt(0) > 96) || (str[i].charCodeAt(0) > 64 && str[i].charCodeAt(0) < 90)) {
+			stripped += str[i];
+		}
+	}
+	return stripped;
+
+};
+
+console.log(stripSpecialChars2('app[le'));
+
 // Count letters
 
 var letterCount = function(str) {
